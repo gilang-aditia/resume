@@ -1,13 +1,11 @@
-import { ArrowDownRight } from "@aliimam/icons";
 import { Oswald } from "next/font/google";
-import { Button } from "@/components/ui/button";
 
 const myFont = Oswald({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
 
-export function HeroSection() {
+export default function HeroSection() {
   const currentYear = new Date().getFullYear();
 
   return (
