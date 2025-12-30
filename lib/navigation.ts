@@ -11,7 +11,7 @@ export const NAVIGATION: NavItem[] = [
     href: "/experience",
     description: "View my experience",
   },
-  { name: "Projects", href: "/projects", description: "See my projects" },
   { name: "About", href: "/about", description: "Learn about me" },
+  { name: "Projects", href: "/projects", description: "See my projects" },
   { name: "Contact", href: "/contact", description: "Get in touch" },
 ];
