@@ -70,7 +70,7 @@ export const ProjectCard = ({
           transformStyle: "preserve-3d",
           backgroundImage: `url(${imageUrl})`,
         }}
-        className="absolute inset-4 grid h-[calc(100%-2rem)] w-[calc(100%-2rem)] place-content-end rounded-xl bg-contain bg-center shadow-lg"
+        className="absolute inset-4 grid h-[calc(100%-2rem)] w-[calc(100%-2rem)] place-content-end rounded-xl bg-cover bg-no-repeat bg-center shadow-lg"
       >
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 rounded-xl bg-linear-to-t from-black/80 via-black/40 to-transparent" />
@@ -78,13 +78,13 @@ export const ProjectCard = ({
         {/* Content */}
         <div
           style={{ transform: "translateZ(50px)" }}
-          className="p-6 text-white flex flex-col justify-between w-full h-full"
+          className="p-2 text-white flex flex-col justify-between w-full h-full"
         >
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-medium text-white border border-white/30"
+                className="px-3 py-1 font-mono rounded-full bg-white/20 backdrop-blur-sm text-xs font-medium text-white border border-white/30"
               >
                 {tag}
               </span>
@@ -93,8 +93,8 @@ export const ProjectCard = ({
 
           <div className="flex justify-between items-end gap-4">
             <div className="flex-1">
-              <h3 className="text-lg font-bold mt-2">{title}</h3>
-              <p className="text-xs text-white/80 line-clamp-2">
+              <h3 className="text-lg font-mono mt-2">{title}</h3>
+              <p className="text-xs font-mono text-white/80 line-clamp-2">
                 {description}
               </p>
             </div>

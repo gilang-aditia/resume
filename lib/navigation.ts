@@ -12,6 +12,6 @@ export const NAVIGATION: NavItem[] = [
     description: "View my experience",
   },
   { name: "About", href: "/about", description: "Learn about me" },
-  { name: "Projects", href: "/projects", description: "See my projects" },
+  { name: "Projects", href: "/project", description: "See my projects" },
   { name: "Contact", href: "/contact", description: "Get in touch" },
 ];
