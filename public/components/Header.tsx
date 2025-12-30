@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAVIGATION } from "@/lib/navigation";
+import { ThemeToggle } from "./ThemeTonggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +20,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
@@ -41,7 +41,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo dengan link ke home */}
+          {/* Logo */}
           <Link
             href="/"
             className="font-serif text-xl md:text-2xl font-semibold text-foreground hover:opacity-80 transition-opacity"
@@ -71,23 +71,26 @@ const Navbar = () => {
                 />
               </Link>
             ))}
-            {/* <Button size="sm" className="ml-4" asChild>
-              <Link href="/contact">Book a call</Link>
-            </Button> */}
+
+            {/* Theme Toggle di Desktop */}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-foreground hover:bg-accent/10 rounded-md transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            <ThemeToggle />
+            <button
+              className="p-2 text-foreground hover:bg-accent/10 rounded-md transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -116,16 +119,6 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
-            {/* <div className="px-4 pt-2">
-              <Button className="w-full" asChild>
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Book a call
-                </Link>
-              </Button>
-            </div> */}
           </div>
         </div>
       </div>

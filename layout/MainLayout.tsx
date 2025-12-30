@@ -2,6 +2,7 @@
 
 import Navbar from "@/public/components/Header";
 import LoadingScreenSimple from "@/public/components/LoadingScreen";
+import { ThemeToggle } from "@/public/components/ThemeTonggle";
 import { useState, useEffect } from "react";
 
 export default function MainLayout({
@@ -36,7 +37,7 @@ export default function MainLayout({
         }`}
       >
         <Navbar />
-        <main className="pt-16 md:pt-20"> {children}</main>
+        <main className="pt-16 md:pt-20">{children}</main>
       </div>
     </>
   );

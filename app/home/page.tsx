@@ -34,7 +34,7 @@ export function HeroSection() {
                 <div>/ WEB DESIGN (UX/UI)</div>
                 <div>/ WEB DEVELOPMENT</div>
               </div>
-              <div className="absolute hidden  md:flex left-1/2 -top-10 w-fit overflow-hidden bg-secondary">
+              <div className="absolute hidden md:flex left-1/2 -top-2 w-fit overflow-hidden bg-secondary">
                 <img
                   src="/assets/myFolio/ai.jpg"
                   alt="Designer portrait"
@@ -58,7 +58,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="md:mt-40 mt-10">
+        <div className="md:mt-56 mt-10">
           <p className="mx-auto max-w-2xl font-mono text-center text-sm font-medium tracking-wide md:text-base">
             I'M EXPERIENCED WEB AND UX/UI DESIGNER,
             <br />
@@ -66,9 +66,6 @@ export function HeroSection() {
             <br />
             BRANDS OF ALL USERS
           </p>
-        </div>
-        <div className="flex justify-center pt-6">
-          <Button size={"lg"}>Book a call</Button>
         </div>
       </div>
       <div
