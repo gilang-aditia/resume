@@ -78,7 +78,7 @@ export const ProjectCard = ({
         {/* Content */}
         <div
           style={{ transform: "translateZ(50px)" }}
-          className="p-2 text-white flex flex-col justify-between w-full h-full"
+          className="p-6 text-white flex flex-col justify-between w-full h-full"
         >
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
