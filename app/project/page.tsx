@@ -20,6 +20,21 @@ const projects = [
     projectUrl: "https://bali.varnion.net.id/",
     tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
   },
+  {
+    title: "Keponet - Company Website",
+    description:
+      "Modern and responsive company website for Keponet, built with Next.js and Tailwind CSS.",
+    imageUrl: "/assets/image/keponet.png",
+    projectUrl: "https://keponet-dev.ioh.nexusapp.id/",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Three.js",
+      "GSAP",
+    ],
+  },
 ];
 
 export default function Projects() {
@@ -151,7 +166,7 @@ export default function Projects() {
           <h2
             className={cn(
               oswald.className,
-              "text-5xl md:text-7xl xl:text-8xl font-bold mb-6 text-black dark:text-white tracking-tight md:tracking-[-2px] xl:tracking-[-3px]"
+              "text-5xl md:text-7xl xl:text-8xl font-bold mb-6 text-black dark:text-white tracking-tight md:tracking-[-2px] xl:tracking-[-3px]",
             )}
           >
             MY PROJECTS
