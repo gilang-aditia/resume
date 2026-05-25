@@ -4,6 +4,7 @@ import Navbar from "@/public/components/Header";
 import LoadingScreenSimple from "@/public/components/LoadingScreen";
 import { ThemeToggle } from "@/public/components/ThemeTonggle";
 import { useState, useEffect } from "react";
+import AIChatButton from "@/components/AIChatButton";
 
 export default function MainLayout({
   children,
@@ -38,7 +39,9 @@ export default function MainLayout({
       >
         <Navbar />
         <main className="pt-16 md:pt-20">{children}</main>
+        {!isLoading && <AIChatButton />}
       </div>
     </>
   );
 }
+
