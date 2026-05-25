@@ -261,7 +261,7 @@ export default function ExperienceJob() {
                     )}
                   >
                     <div className="flex items-center gap-2">
-                      <Building2 className={cn("w-4 h-4", job.logoColor)} />
+                     
                       <span>{job.company}</span>
                     </div>
                     {activeTab === idx && (
@@ -297,7 +297,7 @@ export default function ExperienceJob() {
                         <div>
                           <div className="flex items-center justify-between mb-4">
                             <div className="p-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-black dark:text-white group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-350">
-                              <ProjectIcon className="w-5 h-5" />
+                             <ProjectIcon className="w-5 h-5" />
                             </div>
                             <span className="text-[10px] font-mono text-gray-400 dark:text-gray-500 uppercase tracking-wider">
                               Project {index + 1}

@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { Oswald } from "next/font/google";
 import { motion } from "framer-motion";
 
+import { SpotifyCard } from "@/components/SpotifyCard";
+
 const oswald = Oswald({
   weight: ["400", "700"],
   subsets: ["latin"],
@@ -148,32 +150,37 @@ export default function About() {
           <div className="flex w-full flex-col items-end">
             <WavePath className="mb-10" />
 
-            <div className="flex w-full flex-col items-end">
-              <motion.div className="ml-8 font-mono space-y-6 text-md text-foreground/80 md:text-lg bg-white dark:bg-black  rounded-2xl p-6 md:p-8 ">
-                <p>
-                  I am a Full-Stack Developer with a primary focus on Front-End
-                  Development and a strong interest in UI/UX Design. I have
-                  experience building modern, responsive, and well-structured
-                  web applications with a strong attention to detail and user
-                  experience.
-                </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+              <div className="lg:col-span-2">
+                <motion.div className="font-mono space-y-6 text-md text-foreground/80 md:text-lg bg-white dark:bg-black rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-gray-800">
+                  <p>
+                    I am a Full-Stack Developer with a primary focus on Front-End
+                    Development and a strong interest in UI/UX Design. I have
+                    experience building modern, responsive, and well-structured
+                    web applications with a strong attention to detail and user
+                    experience.
+                  </p>
 
-                <p>
-                  I regularly work with React, Next.js, TypeScript, Tailwind
-                  CSS, and TanStack (Table & Query) to develop dashboards, CRUD
-                  systems, and API-driven applications. On the backend side, I
-                  have experience using Laravel, Express.js, Prisma, and
-                  MySQL/MariaDB for data management and system integration.
-                </p>
+                  <p>
+                    I regularly work with React, Next.js, TypeScript, Tailwind
+                    CSS, and TanStack (Table & Query) to develop dashboards, CRUD
+                    systems, and API-driven applications. On the backend side, I
+                    have experience using Laravel, Express.js, Prisma, and
+                    MySQL/MariaDB for data management and system integration.
+                  </p>
 
-                <p>
-                  I am comfortable handling projects end-to-end, from UI design
-                  and frontend implementation to backend integration. I have
-                  strong problem-solving skills, adapt quickly to new
-                  technologies, and can work effectively both independently and
-                  in a team.
-                </p>
-              </motion.div>
+                  <p>
+                    I am comfortable handling projects end-to-end, from UI design
+                    and frontend implementation to backend integration. I have
+                    strong problem-solving skills, adapt quickly to new
+                    technologies, and can work effectively both independently and
+                    in a team.
+                  </p>
+                </motion.div>
+              </div>
+              <div className="lg:col-span-1">
+                <SpotifyCard />
+              </div>
             </div>
           </div>
         </div>
