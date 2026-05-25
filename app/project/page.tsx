@@ -39,7 +39,7 @@ const projects = [
     title: "SDN 1 Teluk - School Website",
     description:
       "Website Sekolah Dasar Negeri 1 Teluk Purwokerto Selatan",
-    imageUrl: "/assets/image/sdn1teluk.png",
+    imageUrl: "/assets/image/3.png",
     projectUrl: "https://developer-tim-sdn1-teluk.github.io/SD-Negeri-1-Teluk/",
     tags: [
       "Laravel",
@@ -52,7 +52,7 @@ const projects = [
     title: "React Movie Chill - API Preview",
     description:
       "Melihat list Film terupdate Website Preview Menggunakan API Public",
-    imageUrl: "/assets/image/sdn1teluk.png",
+    imageUrl: "/assets/image/4.png",
     projectUrl: "https://react-chill-movie.web.app/",
     tags: [
       "React",
@@ -64,7 +64,7 @@ const projects = [
     title: "Boga Eterna Sentosa - Web Company",
     description:
       "Web Company perusahaan importir makanan yang berlokasi di Indonesia, dengan fokus pada produk makanan Korea, Cina, dan Jepang yang telah tersertifikasi halal.",
-    imageUrl: "/assets/image/sdn1teluk.png",
+    imageUrl: "/assets/image/5.png",
     projectUrl: "https://gilang-aditia.github.io/PT_Boga/",
     tags: [
       "React",
