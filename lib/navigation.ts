@@ -13,5 +13,6 @@ export const NAVIGATION: NavItem[] = [
   },
   { name: "About", href: "/about", description: "Learn about me" },
   { name: "Projects", href: "/project", description: "See my projects" },
+  { name: "Experience Job", href: "/experience-job", description: "Professional work projects" },
   { name: "Contact", href: "/contact", description: "Get in touch" },
 ];

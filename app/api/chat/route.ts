@@ -32,21 +32,25 @@ Here is the exact information about Gilang Aditia:
 
 2. PROFESSIONAL WORK EXPERIENCE:
 - PT. Varnion Technology Semesta (Jakarta Selatan, Indonesia)
-  * Role: Frontend Developer
-  * Duration: June 2025 - Present (Currently Working)
-  * Description: Mengembangkan dan memelihara aplikasi web frontend menggunakan teknologi modern seperti React, Next.js, dan TypeScript. Bertanggung jawab atas implementasi UI/UX design, optimasi performa, dan kolaborasi dengan tim backend untuk integrasi API.
+  * Role: Frontend Developer (June 2025 - Present)
+  * Description: Mengembangkan dan memelihara aplikasi web frontend dengan React, Next.js, dan TypeScript.
+  * Projects Developed:
+    1. Hi Varnion: Komunikasi & dashboard client dengan admin Varnion untuk berbagai kendala, menggunakan WebSocket realtime end-to-end.
+    2. Nexus Reward: Referral code management, point redemption, and withdrawal processing.
+    3. Nexus Ads: Pengelola iklan.
+    4. Nexus Tune: Management bandwidth network.
+    5. Megalos: Membuat config template realtime jika ada perubahan.
+    6. Fiberzone: Pembelian paket internet.
+    7. Captive Hook: Menampilkan ads dari Nexus Ads yang sudah dikonfigurasi dengan tampilan yang dikonfigurasi Megalos.
 - PT. Aneka Dasuib Jaya (Kota Tangerang, Banten, Indonesia)
-  * Role: Frontend Developer
-  * Duration: August 2023 - April 2025 (1 year 9 months)
-  * Description: Membangun dan mengembangkan aplikasi web responsif untuk berbagai klien perusahaan. Mengimplementasikan reusable components, state management, dan menerapkan best practices dalam pengembangan frontend.
-- Binar Academy (Jakarta Selatan, Indonesia)
-  * Role: UI/UX Research and Design Intern
-  * Duration: February 2022 - July 2022 (6 months)
-  * Description: Melakukan penelitian pengguna, membuat wireframes, mockups, dan prototype untuk aplikasi mobile dan web. Berkolaborasi dengan tim pengembang untuk memastikan implementasi design yang tepat.
-- Telkom Indonesia (Yogyakarta, Indonesia)
-  * Role: Full-stack Web Developer Intern
-  * Duration: October 2021 - February 2022 (5 months)
-  * Description: Mengembangkan aplikasi web full-stack dari konsep hingga deployment. Bertanggung jawab atas frontend (React) dan backend (Node.js) development, serta integrasi database.
+  * Role: Frontend Developer (August 2023 - April 2025)
+  * Description: Membangun aplikasi web responsif untuk berbagai klien perusahaan.
+  * Projects Developed:
+    1. ssayomart: E-commerce online shop dengan integrasi logistik pengiriman Gojek.
+    2. Supply Chain: Web input/output data gudang & formulasi penghitungan bahan.
+    3. Java Super Food Grosir: E-commerce skala grosir (bukan satuan).
+- Binar Academy (UI/UX Intern, Feb 2022 - Jul 2022)
+- Telkom Indonesia (Full-stack Intern, Oct 2021 - Feb 2022)
 
 3. SKILLS & TECHNOLOGIES:
 - Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, Framer Motion, Three.js, GSAP, TanStack Table & Query.

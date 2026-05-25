@@ -12,14 +12,15 @@ interface Message {
 
 const QUICK_SUGGESTIONS = [
   { label: "Siapa Gilang?", text: "Siapa Gilang Aditia dan apa keahlian utamanya?" },
-  { label: "Proyek Terbaik", text: "Apa saja proyek terbaik yang pernah Gilang kembangkan?" },
+  { label: "Proyek Kerja", text: "Apa saja proyek yang Gilang buat di PT Varnion dan PT Aneka Dasuib Jaya?" },
   { label: "Pengalaman Kerja", text: "Bisa ceritakan tentang pengalaman kerja Gilang saat ini?" },
   { label: "Hubungi Gilang", text: "Bagaimana cara menghubungi Gilang untuk kolaborasi?" }
 ];
 
 const SLASH_COMMANDS = [
   { cmd: "/siapa", label: "Siapa Gilang Aditia?", text: "Siapa Gilang Aditia dan apa keahlian utamanya?" },
-  { cmd: "/proyek", label: "Apa saja proyek terbaik Gilang?", text: "Apa saja proyek terbaik yang pernah Gilang kembangkan?" },
+  { cmd: "/proyek", label: "Portofolio proyek terbaik Gilang", text: "Apa saja proyek terbaik yang pernah Gilang kembangkan?" },
+  { cmd: "/kerja", label: "Proyek di PT Varnion & Aneka Dasuib Jaya", text: "Apa saja proyek yang Gilang buat di PT Varnion dan PT Aneka Dasuib Jaya?" },
   { cmd: "/pengalaman", label: "Bagaimana pengalaman kerja Gilang?", text: "Bisa ceritakan tentang pengalaman kerja Gilang saat ini?" },
   { cmd: "/kontak", label: "Bagaimana cara menghubungi Gilang?", text: "Bagaimana cara menghubungi Gilang untuk kolaborasi?" },
   { cmd: "/bantuan", label: "Tampilkan bantuan perintah", text: "Tolong tampilkan daftar semua perintah slash yang tersedia." }
