@@ -15,14 +15,16 @@ export default function HeroSection() {
       <section className="min-h-screen overflow-hidden relative py-20">
         <div className="mx-auto max-w-7xl relative z-20 px-6">
           <div className="relative ">
+            <h1 className="sr-only">Gilang Aditia - Frontend Developer & UI/UX Designer Portfolio</h1>
             <p className="text-sm absolute -top-4 left-20 font-medium tracking-wider">
               {currentYear}
             </p>
-            <h1
+            <p
+              aria-hidden="true"
               className={`${myFont.className} z-20 text-primary relative font-bold text-center tracking-[-7px] text-7xl md:text-9xl xl:tracking-[-1rem] md:tracking-[-14px] xl:text-[10rem]`}
             >
               FRONTEND DEVELOPER
-            </h1>
+            </p>
             <p className="text-4xl hidden xl:block absolute -bottom-12 right-24 font-thin tracking-[6px]">
               GILANG
             </p>
@@ -38,7 +40,7 @@ export default function HeroSection() {
                 <div className="absolute hidden md:flex left-1/2 -top-2 w-fit overflow-hidden bg-secondary">
                   <img
                     src="/assets/myFolio/ai.jpg"
-                    alt="Designer portrait"
+                    alt="Gilang Aditia - Frontend Developer Profile Picture"
                     className="h-100 w-full object-contain grayscale"
                   />
                   <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
@@ -50,7 +52,7 @@ export default function HeroSection() {
             <div className="flex md:hidden left-1/2 -top-10 w-full md:w-fit overflow-hidden bg-secondary">
               <img
                 src="/assets/myFolio/ai.jpg"
-                alt="Designer portrait"
+                alt="Gilang Aditia - Frontend Developer Profile Picture"
                 className="h-100 w-full object-contain grayscale"
               />
               <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
