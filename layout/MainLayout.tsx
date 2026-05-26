@@ -5,6 +5,7 @@ import LoadingScreenSimple from "@/public/components/LoadingScreen";
 import { ThemeToggle } from "@/public/components/ThemeTonggle";
 import { useState, useEffect } from "react";
 import AIChatButton from "@/components/AIChatButton";
+import KonamiCodeEasterEgg from "@/components/KonamiCodeEasterEgg";
 
 export default function MainLayout({
   children,
@@ -23,6 +24,7 @@ export default function MainLayout({
 
   return (
     <>
+      <KonamiCodeEasterEgg />
       {isLoading && (
         <LoadingScreenSimple
           onComplete={() => setIsLoading(false)}
@@ -44,4 +46,3 @@ export default function MainLayout({
     </>
   );
 }
-

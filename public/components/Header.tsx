@@ -6,10 +6,26 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAVIGATION } from "@/lib/navigation";
 import { ThemeToggle } from "./ThemeTonggle";
+import { motion, AnimatePresence } from "framer-motion";
+
+const easterEggQuotes = [
+  "This website was made with ☕ and 🧠",
+  "No client was harmed in the making of this site",
+  "Powered by ✨ and procrastination",
+  "Built with love and a lot of StackOverflow",
+  "If you're reading this, I'm probably out of coffee",
+  "Made by a human (probably)",
+  "0 bugs found. 0 clients satisfied.",
+  "It's not a bug, it's a feature™",
+  "Still better by far than my coding skills",
+];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoClickCount, setLogoClickCount] = useState(0);
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
+  const [easterEggMessage, setEasterEggMessage] = useState("");
   const pathname = usePathname();
 
   useEffect(() => {
@@ -31,6 +47,23 @@ const Navbar = () => {
     return pathname?.startsWith(href);
   };
 
+  const handleLogoClick = () => {
+    const newCount = logoClickCount + 1;
+    setLogoClickCount(newCount);
+
+    if (newCount === 7) {
+      const randomQuote =
+        easterEggQuotes[Math.floor(Math.random() * easterEggQuotes.length)];
+      setEasterEggMessage(randomQuote);
+      setShowEasterEgg(true);
+      setLogoClickCount(0);
+
+      setTimeout(() => {
+        setShowEasterEgg(false);
+      }, 4000);
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -45,7 +78,10 @@ const Navbar = () => {
           <Link
             href="/"
             className="font-serif text-xl md:text-2xl font-semibold text-foreground hover:opacity-80 transition-opacity"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              handleLogoClick();
+            }}
           >
             Glng .<span className="text-accent">.</span>
           </Link>
@@ -122,6 +158,21 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Easter Egg Bubble */}
+      <AnimatePresence>
+        {showEasterEgg && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: -20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="fixed top-24 left-1/2 -translate-x-1/2 z-50 px-6 py-3 bg-linear-to-r from-emerald-400 to-blue-400 text-black rounded-full shadow-lg font-medium text-sm md:text-base max-w-xs text-center"
+          >
+            {easterEggMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
