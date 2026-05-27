@@ -20,9 +20,8 @@ export default function KonamiCodeEasterEgg() {
   const sequenceRef = useRef<string[]>([]);
   const [showLegend, setShowLegend] = useState(false);
   const [isRetro, setIsRetro] = useState(false);
-  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
-  const lastTapRef = useRef<number>(0);
-  const swipeSequenceRef = useRef<string[]>([]);
+  const tapCountRef = useRef<number>(0);
+  const tapTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -48,78 +47,30 @@ export default function KonamiCodeEasterEgg() {
   }, []);
 
   useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      const now = Date.now();
-      const lastTap = lastTapRef.current;
-      const isDoubleTap = now - lastTap < 300;
+    const handleTouchEnd = () => {
+      tapCountRef.current += 1;
 
-      if (isDoubleTap) {
-        touchStartRef.current = {
-          x: e.touches[0].clientX,
-          y: e.touches[0].clientY,
-        };
-        swipeSequenceRef.current = [];
+      if (tapTimeoutRef.current) {
+        clearTimeout(tapTimeoutRef.current);
       }
 
-      lastTapRef.current = now;
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      if (!touchStartRef.current) return;
-
-      const touchEnd = {
-        x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY,
-      };
-
-      const diffX = touchEnd.x - touchStartRef.current.x;
-      const diffY = touchEnd.y - touchStartRef.current.y;
-      const distance = Math.sqrt(diffX * diffX + diffY * diffY);
-
-      if (distance < 50) return;
-
-      const angle = Math.atan2(diffY, diffX);
-      const normalizedAngle = ((angle * 180) / Math.PI + 360) % 360;
-
-      let direction = "";
-      if (normalizedAngle < 45 || normalizedAngle > 315) direction = "right";
-      else if (normalizedAngle < 135) direction = "down";
-      else if (normalizedAngle < 225) direction = "left";
-      else direction = "up";
-
-      swipeSequenceRef.current.push(direction);
-
-      if (swipeSequenceRef.current.length > 8) {
-        swipeSequenceRef.current.shift();
-      }
-
-      const swipePattern = [
-        "up",
-        "up",
-        "down",
-        "down",
-        "left",
-        "right",
-        "left",
-        "right",
-      ];
-      const isSwipeMatch = swipeSequenceRef.current.every(
-        (dir, index) => dir === swipePattern[index],
-      );
-
-      if (isSwipeMatch && swipeSequenceRef.current.length === 8) {
+      if (tapCountRef.current === 7) {
         triggerEasterEgg();
-        swipeSequenceRef.current = [];
-        touchStartRef.current = null;
+        tapCountRef.current = 0;
+      } else {
+        tapTimeoutRef.current = setTimeout(() => {
+          tapCountRef.current = 0;
+        }, 2000);
       }
     };
 
-    window.addEventListener("touchstart", handleTouchStart);
     window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
-      window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
+      if (tapTimeoutRef.current) {
+        clearTimeout(tapTimeoutRef.current);
+      }
     };
   }, []);
 
