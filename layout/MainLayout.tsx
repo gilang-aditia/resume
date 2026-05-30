@@ -6,6 +6,7 @@ import { ThemeToggle } from "@/public/components/ThemeTonggle";
 import { useState, useEffect } from "react";
 import AIChatButton from "@/components/AIChatButton";
 import KonamiCodeEasterEgg from "@/components/KonamiCodeEasterEgg";
+import CursorTrail from "@/components/CursorTrail";
 
 export default function MainLayout({
   children,
@@ -24,6 +25,7 @@ export default function MainLayout({
 
   return (
     <>
+      <CursorTrail />
       <KonamiCodeEasterEgg />
       {isLoading && (
         <LoadingScreenSimple

@@ -9,15 +9,16 @@ import { ThemeToggle } from "./ThemeTonggle";
 import { motion, AnimatePresence } from "framer-motion";
 
 const easterEggQuotes = [
-  "This website was made with ☕ and 🧠",
-  "No client was harmed in the making of this site",
-  "Powered by ✨ and procrastination",
-  "Built with love and a lot of StackOverflow",
-  "If you're reading this, I'm probably out of coffee",
-  "Made by a human (probably)",
-  "0 bugs found. 0 clients satisfied.",
-  "It's not a bug, it's a feature™",
-  "Still better by far than my coding skills",
+  "Gilang bikin ini pakai ☕ dan 🧠",
+  "Dibikin pas deadline, tapi santai aja",
+  "Kalau error, namanya fitur spesial dari Gilang",
+  "Powered by ✨ dan kopi tubruk",
+  "Dibuat dengan cinta dan 100+ tab Chrome",
+  "Gilang udah cek 3 kali, insyaallah aman",
+  "0 bug serius. 1 developer waras.",
+  "Ini portofolio, bukan proyek kampus",
+  "Dibikin jam 2 malem, hasilnya gini-gini aja",
+  "Still better than my first React app",
 ];
 
 const Navbar = () => {

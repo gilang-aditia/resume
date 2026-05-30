@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef, useCallback } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { Oswald } from "next/font/google";
@@ -7,14 +11,49 @@ const myFont = Oswald({
   subsets: ["latin"],
 });
 
+function use3DTilt() {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0.5);
+  const y = useMotionValue(0.5);
+
+  const rotateX = useTransform(y, [0, 1], [8, -8]);
+  const rotateY = useTransform(x, [0, 1], [-8, 8]);
+  const springX = useSpring(rotateX, { stiffness: 200, damping: 20 });
+  const springY = useSpring(rotateY, { stiffness: 200, damping: 20 });
+
+  const handleMouse = useCallback((e: { clientX: number; clientY: number }) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    x.set((e.clientX - rect.left) / rect.width);
+    y.set((e.clientY - rect.top) / rect.height);
+  }, [x, y]);
+
+  const handleLeave = useCallback(() => {
+    x.set(0.5);
+    y.set(0.5);
+  }, [x, y]);
+
+  return { ref, rotateX: springX, rotateY: springY, handleMouse, handleLeave };
+}
+
 export default function HeroSection() {
   const currentYear = new Date().getFullYear();
+  const tilt = use3DTilt();
 
   return (
     <>
-      <section className="min-h-screen overflow-hidden relative py-20">
-        <div className="mx-auto max-w-7xl relative z-20 px-6">
-          <div className="relative ">
+      <section
+        ref={tilt.ref}
+        onMouseMove={tilt.handleMouse}
+        onMouseLeave={tilt.handleLeave}
+        className="min-h-screen overflow-hidden relative py-20"
+        style={{ perspective: "1200px" }}
+      >
+        <motion.div
+          className="mx-auto max-w-7xl relative z-20 px-6"
+          style={{ rotateX: tilt.rotateX, rotateY: tilt.rotateY }}
+        >
+          <div className="relative">
             <h1 className="sr-only">Gilang Aditia - Frontend Developer & UI/UX Designer Portfolio</h1>
             <p className="text-sm absolute -top-4 left-20 font-medium tracking-wider">
               {currentYear}
@@ -37,11 +76,11 @@ export default function HeroSection() {
                   <div>/ WEB DESIGN (UX/UI)</div>
                   <div>/ WEB DEVELOPMENT</div>
                 </div>
-                <div className="absolute hidden md:flex left-1/2 -top-2 w-fit overflow-hidden bg-secondary">
+                <div className="absolute hidden md:flex left-1/2 -top-2 w-fit overflow-hidden bg-secondary group">
                   <img
                     src="/assets/myFolio/ai.jpg"
                     alt="Gilang Aditia - Frontend Developer Profile Picture"
-                    className="h-100 w-full object-contain grayscale"
+                    className="h-100 w-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0"
                   />
                   <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
                     BASED IN INDONESIA
@@ -49,11 +88,11 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            <div className="flex md:hidden left-1/2 -top-10 w-full md:w-fit overflow-hidden bg-secondary">
+            <div className="flex md:hidden left-1/2 -top-10 w-full md:w-fit overflow-hidden bg-secondary group">
               <img
                 src="/assets/myFolio/ai.jpg"
                 alt="Gilang Aditia - Frontend Developer Profile Picture"
-                className="h-100 w-full object-contain grayscale"
+                className="h-100 w-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0"
               />
               <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
                 BASED IN INDONESIA
@@ -70,7 +109,7 @@ export default function HeroSection() {
               BRANDS OF ALL USERS
             </p>
           </div>
-        </div>
+        </motion.div>
         <div
           className="absolute block dark:hidden inset-0 z-0"
           style={{
