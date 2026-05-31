@@ -7,15 +7,15 @@ export async function POST(req: Request) {
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json(
         { error: "Invalid messages format. Expected an array of messages." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    const apiKey = process.env.BLACKBOX_API_KEY;
+    const apiKey = process.env.OPENCODE_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
         { error: "API Key is not configured on the server." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -87,47 +87,53 @@ CHAT AND CONTEXT BOUNDARY RULES (CRITICAL):
 - CONCISENESS RULE (EXTREMELY IMPORTANT): Keep all your responses extremely short, concise, and sweet (maximum 2-3 sentences). Do not use long paragraphs or detailed explanations. Keep it brief.
 - EMOJI RULE (EXTREMELY IMPORTANT): Never put emojis in the middle of sentences, as bullet point prefixes, or in headers. Place a maximum of 1 or 2 emojis ONLY at the very end of your entire response (at the end of the final sentence) 👋😊`;
 
-    const response = await fetch("https://api.blackbox.ai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
+    const response = await fetch(
+      "https://opencode.ai/zen/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "deepseek-v4-flash-free",
+          messages: [{ role: "system", content: systemPrompt }, ...messages],
+        }),
       },
-      body: JSON.stringify({
-        model: "blackboxai/moonshotai/kimi-k2.6",
-        messages: [
-          { role: "system", content: systemPrompt },
-          ...messages
-        ]
-      })
-    });
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Blackbox API error status:", response.status, errorText);
+      console.error("OpenCode API error status:", response.status, errorText);
       return NextResponse.json(
         { error: `Error from AI service: ${response.statusText}` },
-        { status: response.status }
+        { status: response.status },
       );
     }
 
     const result = await response.json();
-    
-    // Validate output structure from Blackbox API
-    if (result && result.choices && result.choices[0] && result.choices[0].message && result.choices[0].message.content) {
+
+    // Validate output structure from OpenCode API
+    if (
+      result &&
+      result.choices &&
+      result.choices[0] &&
+      result.choices[0].message &&
+      result.choices[0].message.content
+    ) {
       return NextResponse.json({ text: result.choices[0].message.content });
     } else {
       console.error("Unexpected response structure:", result);
       return NextResponse.json(
         { error: "Invalid response format from AI service." },
-        { status: 502 }
+        { status: 502 },
       );
     }
   } catch (error: any) {
     console.error("Error in AI chat route:", error);
     return NextResponse.json(
       { error: error?.message || "Internal server error occurred." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

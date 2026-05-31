@@ -15,12 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gilang-aditia.vercel.app"),
+  metadataBase: new URL("https://gilangaditia.my.id"),
   title: {
     default: "Gilang Aditia | Frontend Developer & UI/UX Designer Portfolio",
     template: "%s | Gilang Aditia",
   },
-  description: "Official portfolio of Gilang Aditia, a professional Frontend Developer based in Jakarta, Indonesia. Specializing in high-performance web applications using React, Next.js, and TypeScript.",
+  description:
+    "Official portfolio of Gilang Aditia, a professional Frontend Developer based in Jakarta, Indonesia. Specializing in high-performance web applications using React, Next.js, and TypeScript.",
   keywords: [
     "Gilang Aditia",
     "Gilang Aditia Portfolio",
@@ -29,12 +30,13 @@ export const metadata: Metadata = {
     "React Developer",
     "Next.js Portfolio",
     "UI/UX Designer Portfolio",
-    "Full-Stack Developer Jakarta"
+    "Full-Stack Developer Jakarta",
   ],
   openGraph: {
     title: "Gilang Aditia | Frontend Developer & UI/UX Designer Portfolio",
-    description: "Official portfolio of Gilang Aditia, a professional Frontend Developer based in Jakarta, Indonesia. Specializing in high-performance web applications using React, Next.js, and TypeScript.",
-    url: "https://gilang-aditia.vercel.app",
+    description:
+      "Official portfolio of Gilang Aditia, a professional Frontend Developer based in Jakarta, Indonesia. Specializing in high-performance web applications using React, Next.js, and TypeScript.",
+    url: "https://gilangaditia.my.id",
     siteName: "Gilang Aditia Portfolio",
     locale: "id_ID",
     type: "website",
@@ -50,7 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Gilang Aditia | Frontend Developer & UI/UX Designer Portfolio",
-    description: "Official portfolio of Gilang Aditia, a professional Frontend Developer based in Jakarta, Indonesia. Specializing in high-performance web applications using React, Next.js, and TypeScript.",
+    description:
+      "Official portfolio of Gilang Aditia, a professional Frontend Developer based in Jakarta, Indonesia. Specializing in high-performance web applications using React, Next.js, and TypeScript.",
     images: ["/assets/myFolio/ai.jpg"],
   },
   robots: {
@@ -69,29 +72,29 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Gilang Aditia",
-  "url": "https://gilang-aditia.vercel.app/",
-  "jobTitle": "Frontend Developer",
-  "sameAs": [
+  name: "Gilang Aditia",
+  url: "https://gilangaditia.my.id/",
+  jobTitle: "Frontend Developer",
+  sameAs: [
     "https://www.linkedin.com/in/gilang-aditia/",
-    "https://github.com/gilang-aditia"
+    "https://github.com/gilang-aditia",
   ],
-  "email": "gaditia744@gmail.com",
-  "telephone": "+6287732886254",
-  "knowsAbout": [
+  email: "gaditia744@gmail.com",
+  telephone: "+6287732886254",
+  knowsAbout: [
     "React",
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
     "UI/UX Design",
-    "Web Development"
+    "Web Development",
   ],
-  "address": {
+  address: {
     "@type": "PostalAddress",
-    "addressLocality": "Jakarta Selatan",
-    "addressRegion": "Jakarta",
-    "addressCountry": "ID"
-  }
+    addressLocality: "Jakarta Selatan",
+    addressRegion: "Jakarta",
+    addressCountry: "ID",
+  },
 };
 
 export default function RootLayout({
@@ -122,4 +125,3 @@ export default function RootLayout({
     </html>
   );
 }
-
