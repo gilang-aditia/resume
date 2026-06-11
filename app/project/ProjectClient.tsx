@@ -35,6 +35,18 @@ const projects = [
       "GSAP",
     ],
   },
+    {
+    title: "911 Konsultan - Web Company",
+    description:
+      "Web Company perusahaan 911 Konsultan yang berlokasi di Indonesia.",
+    projectUrl: "https://comprof-pt-tan.vercel.app/",
+    imageUrl: "/assets/image/6.png",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+    ],
+  },
   {
     title: "SDN 1 Teluk - School Website",
     description:
@@ -72,6 +84,7 @@ const projects = [
       "Tailwind CSS",
     ],
   },
+
 ];
 
 export default function Projects() {
