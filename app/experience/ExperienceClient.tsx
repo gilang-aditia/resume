@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { MapPin, Calendar, Badge } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 import { Oswald } from "next/font/google";
 
 const myFont = Oswald({
@@ -12,48 +12,58 @@ export default function Experience() {
   const experiences = [
     {
       year: "Jun 2025 - Present",
-      duration: "Curently Working",
+      duration: "Currently Working",
       title: "Frontend Developer",
       company: "PT. Varnion Technology Semesta",
-      location: "Jakarta Selatan, Jakarta Raya, Indonesia",
+      location: "South Jakarta, Jakarta, Indonesia",
       description:
-        "Mengembangkan dan memelihara aplikasi web frontend menggunakan teknologi modern seperti React, Next.js, dan TypeScript. Bertanggung jawab atas implementasi UI/UX design, optimasi performa, dan kolaborasi dengan tim backend untuk integrasi API.",
-      //   tags: ["React", "Next.js", "TypeScript"],
+        "Develop and maintain frontend web applications using modern technologies such as React, Next.js, and TypeScript. Responsible for UI/UX design implementation, performance optimization, and collaboration with backend teams for API integration.",
       type: "Professional",
       isActive: true,
     },
     {
-      year: "Agustus 2023 - April 2025",
-      duration: "1 tahun 9 bulan",
+      year: "Apr 2026 - Present",
+      duration: "Currently Working",
+      title: "Freelance Frontend Developer",
+      company: "PT. Laksono Inovasi Teknologi",
+      location: "Remote, Indonesia",
+      description:
+        "Develop and maintain frontend web applications as a freelancer.",
+      type: "Professional",
+      isActive: true,
+    },
+    {
+      year: "Aug 2023 - Apr 2025",
+      duration: "1 year 9 months",
       title: "Frontend Developer",
       company: "PT. Aneka Dasuib Jaya",
-      location: "Kota Tangerang, Banten, Indonesia",
+      location: "Tangerang City, Banten, Indonesia",
       description:
-        "Membangun dan mengembangkan aplikasi web responsif untuk berbagai klien perusahaan. Mengimplementasikan reusable components, state management, dan menerapkan best practices dalam pengembangan frontend.",
+        "Build and develop responsive web applications for various corporate clients. Implement reusable components, state management, and apply best practices in frontend development.",
       //   tags: ["Frontend", "Responsive", "Components"],
       type: "Professional",
       isActive: false,
     },
     {
-      year: "Februari 2022 - Juli 2022",
-      duration: "6 bulan",
+      year: "Feb 2022 - Jul 2022",
+      duration: "6 months",
       title: "UI/UX Research and Design Intern",
       company: "Binar Academy",
-      location: "Jakarta Selatan, Jakarta Raya, Indonesia",
+      location: "South Jakarta, Jakarta, Indonesia",
       description:
-        "Melakukan penelitian pengguna, membuat wireframes, mockups, dan prototype untuk aplikasi mobile dan web. Berkolaborasi dengan tim pengembang untuk memastikan implementasi design yang tepat.",
+        "Conduct user research, create wireframes, mockups, and prototypes for mobile and web applications. Collaborate with the development team to ensure accurate design implementation.",
       // tags: ["UI/UX", "Figma", "Research"],
       type: "Internship",
       isActive: false,
     },
     {
-      year: "Oktober 2021 - Februari 2022",
-      duration: "5 bulan",
+      year: "Oct 2021 - Feb 2022",
+      duration: "5 months",
       title: "Full-stack Web Developer Intern",
       company: "Telkom Indonesia",
-      location: "Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia",
+      location: "Yogyakarta, Special Region of Yogyakarta, Indonesia",
       description:
-        "Mengembangkan aplikasi web full-stack dari konsep hingga deployment. Bertanggung jawab atas frontend (React) dan backend (Node.js) development, serta integrasi database.",
+        "Develop full-stack web applications from concept to deployment. Responsible for frontend (React) and backend (Node.js) development, as well as database integration.",
       //   tags: ["Full-stack", "Node.js", "Database"],
       type: "Internship",
       isActive: false,

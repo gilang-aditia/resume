@@ -9,15 +9,15 @@ import { ThemeToggle } from "./ThemeTonggle";
 import { motion, AnimatePresence } from "framer-motion";
 
 const easterEggQuotes = [
-  "Gilang bikin ini pakai ☕ dan 🧠",
-  "Dibikin pas deadline, tapi santai aja",
-  "Kalau error, namanya fitur spesial dari Gilang",
-  "Powered by ✨ dan kopi tubruk",
-  "Dibuat dengan cinta dan 100+ tab Chrome",
-  "Gilang udah cek 3 kali, insyaallah aman",
-  "0 bug serius. 1 developer waras.",
-  "Ini portofolio, bukan proyek kampus",
-  "Dibikin jam 2 malem, hasilnya gini-gini aja",
+  "Gilang built this with ☕ and 🧠",
+  "Built right at the deadline, but staying chill",
+  "If there's an error, it's Gilang's special feature",
+  "Powered by ✨ and black coffee",
+  "Made with love and 100+ Chrome tabs",
+  "Gilang checked this 3 times, hopefully it's safe",
+  "0 critical bugs. 1 sane developer.",
+  "This is a portfolio, not a college project",
+  "Built at 2 AM, it is what it is",
   "Still better than my first React app",
 ];
 
@@ -38,7 +38,10 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    setIsMobileMenuOpen(false);
+    const timeoutId = setTimeout(() => {
+      setIsMobileMenuOpen(false);
+    }, 0);
+    return () => clearTimeout(timeoutId);
   }, [pathname]);
 
   const isActive = (href: string) => {

@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 import { Oswald } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Building2, 
   Radio, 
   Layers, 
   Award, 
@@ -16,7 +15,8 @@ import {
   Link2, 
   ShoppingBag, 
   Database, 
-  Briefcase 
+  Briefcase,
+  Monitor
 } from "lucide-react";
 
 const oswald = Oswald({
@@ -76,8 +76,23 @@ const jobsData = [
     ],
   },
   {
+    company: "PT. Laksono Inovasi Teknologi",
+    period: "Apr 2026 - Present",
+    role: "Freelance Frontend Developer",
+    logoColor: "text-blue-500",
+    projects: [
+      {
+        title: "Videotron CMS",
+        description: "A comprehensive content management system designed for ordering, scheduling, and managing digital videotron and billboard advertisements.",
+        tags: ["React", "Next.js", "Tailwind CSS", "CMS"],
+        icon: Monitor,
+      },
+    ],
+  },
+
+  {
     company: "PT. Aneka Dasuib Jaya",
-    period: "Agu 2023 - Apr 2025",
+    period: "Aug 2023 - Apr 2025",
     role: "Frontend Developer",
     logoColor: "text-amber-500",
     projects: [
@@ -237,7 +252,7 @@ export default function ExperienceJob() {
           </h2>
 
           <p className="font-mono text-base md:text-sm text-gray-600 dark:text-gray-400 max-w-2xl font-medium tracking-wide">
-            Daftar proyek profesional yang pernah saya kembangkan di masing-masing perusahaan.
+            List of professional projects I have developed at each respective company.
           </p>
         </motion.div>
 

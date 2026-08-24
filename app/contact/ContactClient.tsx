@@ -17,7 +17,7 @@ const contactInfo = [
     value: "gaditia744@gmail.com",
     href: "mailto:gaditia744@gmail.com",
     icon: Mail,
-    label: "Kirim Email",
+    label: "Send Email",
     color: "group-hover:text-red-500",
   },
   {
@@ -25,7 +25,7 @@ const contactInfo = [
     value: "087732886254",
     href: "https://wa.me/6287732886254",
     icon: Phone,
-    label: "Hubungi via WhatsApp",
+    label: "Contact via WhatsApp",
     color: "group-hover:text-green-500",
   },
   {
@@ -33,7 +33,7 @@ const contactInfo = [
     value: "gilang-aditia",
     href: "https://www.linkedin.com/in/gilang-aditia/",
     icon: Linkedin,
-    label: "Lihat Profil",
+    label: "View Profile",
     color: "group-hover:text-blue-500",
   },
 ];
@@ -170,7 +170,7 @@ export default function Contact() {
           </h2>
 
           <p className="font-mono text-base md:text-sm text-gray-600 dark:text-gray-400 max-w-2xl font-medium tracking-wide">
-            Silakan hubungi saya untuk peluang kolaborasi, lowongan pekerjaan, atau sekadar bertegur sapa
+            Please feel free to contact me for collaboration opportunities, job openings, or just to say hi.
           </p>
         </motion.div>
 

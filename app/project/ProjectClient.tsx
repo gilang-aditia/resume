@@ -13,6 +13,22 @@ const oswald = Oswald({
 
 const projects = [
   {
+    title: "Varnion - Internet Service Provider",
+    description:
+      "Company website for Varnion Technology Semesta, an Internet Service Provider.",
+    imageUrl: "/assets/image/varnion.jpg",
+    projectUrl: "https://www.varnion.net.id/id",
+    tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    title: "Vlepo - Smart Property OS",
+    description:
+      "Vlepo is an intelligent platform to manage every screen, message, service, and guest interaction.",
+    imageUrl: "/assets/image/vlepo.jpg",
+    projectUrl: "https://www.vlepo.id",
+    tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+  },
+  {
     title: "Varnion Bali - Company Website",
     description:
       "Modern and responsive company website for Varnion Bali, built with Next.js and Tailwind CSS.",
@@ -35,10 +51,10 @@ const projects = [
       "GSAP",
     ],
   },
-    {
+  {
     title: "911 Konsultan - Web Company",
     description:
-      "Web Company perusahaan 911 Konsultan yang berlokasi di Indonesia.",
+      "Company website for 911 Konsultan located in Indonesia.",
     projectUrl: "https://comprof-pt-tan.vercel.app/",
     imageUrl: "/assets/image/6.png",
     tags: [
@@ -50,7 +66,7 @@ const projects = [
   {
     title: "SDN 1 Teluk - School Website",
     description:
-      "Website Sekolah Dasar Negeri 1 Teluk Purwokerto Selatan",
+      "School website for State Elementary School 1 Teluk, South Purwokerto.",
     imageUrl: "/assets/image/3.png",
     projectUrl: "https://developer-tim-sdn1-teluk.github.io/SD-Negeri-1-Teluk/",
     tags: [
@@ -63,7 +79,7 @@ const projects = [
   {
     title: "React Movie Chill - API Preview",
     description:
-      "Melihat list Film terupdate Website Preview Menggunakan API Public",
+      "View an updated list of movies with preview features using a Public API.",
     imageUrl: "/assets/image/4.png",
     projectUrl: "https://react-chill-movie.web.app/",
     tags: [
@@ -75,7 +91,7 @@ const projects = [
   {
     title: "Boga Eterna Sentosa - Web Company",
     description:
-      "Web Company perusahaan importir makanan yang berlokasi di Indonesia, dengan fokus pada produk makanan Korea, Cina, dan Jepang yang telah tersertifikasi halal.",
+      "Company website for a food importer based in Indonesia, focusing on halal-certified Korean, Chinese, and Japanese food products.",
     imageUrl: "/assets/image/5.png",
     projectUrl: "https://gilang-aditia.github.io/PT_Boga/",
     tags: [

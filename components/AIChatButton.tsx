@@ -11,19 +11,19 @@ interface Message {
 }
 
 const QUICK_SUGGESTIONS = [
-  { label: "Siapa Gilang?", text: "Siapa Gilang Aditia dan apa keahlian utamanya?" },
-  { label: "Proyek Kerja", text: "Apa saja proyek yang Gilang buat di PT Varnion dan PT Aneka Dasuib Jaya?" },
-  { label: "Pengalaman Kerja", text: "Bisa ceritakan tentang pengalaman kerja Gilang saat ini?" },
-  { label: "Hubungi Gilang", text: "Bagaimana cara menghubungi Gilang untuk kolaborasi?" }
+  { label: "Who is Gilang?", text: "Who is Gilang Aditia and what are his main skills?" },
+  { label: "Work Projects", text: "What projects did Gilang build at PT Varnion and PT Aneka Dasuib Jaya?" },
+  { label: "Work Experience", text: "Can you tell me about Gilang's current work experience?" },
+  { label: "Contact Gilang", text: "How can I contact Gilang for collaboration?" }
 ];
 
 const SLASH_COMMANDS = [
-  { cmd: "/siapa", label: "Siapa Gilang Aditia?", text: "Siapa Gilang Aditia dan apa keahlian utamanya?" },
-  { cmd: "/proyek", label: "Portofolio proyek terbaik Gilang", text: "Apa saja proyek terbaik yang pernah Gilang kembangkan?" },
-  { cmd: "/kerja", label: "Proyek di PT Varnion & Aneka Dasuib Jaya", text: "Apa saja proyek yang Gilang buat di PT Varnion dan PT Aneka Dasuib Jaya?" },
-  { cmd: "/pengalaman", label: "Bagaimana pengalaman kerja Gilang?", text: "Bisa ceritakan tentang pengalaman kerja Gilang saat ini?" },
-  { cmd: "/kontak", label: "Bagaimana cara menghubungi Gilang?", text: "Bagaimana cara menghubungi Gilang untuk kolaborasi?" },
-  { cmd: "/bantuan", label: "Tampilkan bantuan perintah", text: "Tolong tampilkan daftar semua perintah slash yang tersedia." }
+  { cmd: "/who", label: "Who is Gilang Aditia?", text: "Who is Gilang Aditia and what are his main skills?" },
+  { cmd: "/projects", label: "Gilang's best project portfolio", text: "What are the best projects Gilang has ever developed?" },
+  { cmd: "/work", label: "Projects at PT Varnion & Aneka Dasuib Jaya", text: "What projects did Gilang build at PT Varnion and PT Aneka Dasuib Jaya?" },
+  { cmd: "/experience", label: "How is Gilang's work experience?", text: "Can you tell me about Gilang's current work experience?" },
+  { cmd: "/contact", label: "How to contact Gilang?", text: "How can I contact Gilang for collaboration?" },
+  { cmd: "/help", label: "Show command help", text: "Please show a list of all available slash commands." }
 ];
 
 export default function AIChatButton() {
@@ -31,7 +31,7 @@ export default function AIChatButton() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Halo! Saya adalah AI Agent portofolio Gilang. Saya dapat membantu Anda mengetahui lebih banyak tentang keahlian, pengalaman kerja, proyek, atau cara menghubungi Gilang. Ada yang ingin Anda tanyakan? (Ketik '/' untuk melihat pintasan perintah!)"
+      content: "Hello! I am Gilang's portfolio AI Agent. I can help you learn more about Gilang's skills, work experience, projects, or how to contact him. What would you like to ask? (Type '/' to see command shortcuts!)"
     }
   ]);
   const [input, setInput] = useState("");
@@ -88,7 +88,7 @@ export default function AIChatButton() {
       });
 
       if (!response.ok) {
-        throw new Error("Gagal mendapatkan respon dari AI.");
+        throw new Error("Failed to get response from AI.");
       }
 
       const data = await response.json();
@@ -104,7 +104,7 @@ export default function AIChatButton() {
         ...prev,
         {
           role: "assistant",
-          content: "Maaf, sepertinya terjadi kendala koneksi dengan AI. Silakan coba lagi beberapa saat lagi."
+          content: "Sorry, it seems there is a connection issue with the AI. Please try again in a moment."
         }
       ]);
     } finally {
@@ -113,11 +113,11 @@ export default function AIChatButton() {
   };
 
   const handleClear = () => {
-    if (window.confirm("Apakah Anda ingin menghapus riwayat obrolan?")) {
+    if (window.confirm("Do you want to clear the chat history?")) {
       setMessages([
         {
           role: "assistant",
-          content: "Halo! Riwayat obrolan telah dihapus. Ada lagi yang ingin Anda tanyakan seputar portofolio Gilang?"
+          content: "Hello! The chat history has been cleared. Is there anything else you'd like to ask about Gilang's portfolio?"
         }
       ]);
     }
@@ -158,7 +158,7 @@ export default function AIChatButton() {
           )}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
-          aria-label="Tanya AI Agent"
+          aria-label="Ask AI Agent"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (
@@ -200,8 +200,7 @@ export default function AIChatButton() {
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 220 }}
             className={cn(
-              "fixed bottom-24 right-6 z-50 flex flex-col w-[360px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[75vh]",
-              "bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-black/10 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden font-mono"
+              "fixed bottom-20 right-4 w-80 h-[520px] bg-white/80 dark:bg-black/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-black/10 dark:border-white/10 flex flex-col overflow-hidden z-50 font-mono"
             )}
           >
             {/* Header */}
@@ -212,7 +211,7 @@ export default function AIChatButton() {
                 </div>
                 <div className="flex flex-col text-left">
                   <span className="text-xs font-bold text-black dark:text-white uppercase tracking-wider flex items-center gap-1.5">
-                    AI U E O (AI nya orang ganteng)
+                    AI U E O (Handsome guy's AI)
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                   </span>
                   <span className="text-[10px] text-foreground/60 leading-none">Online & Ready</span>
@@ -222,7 +221,7 @@ export default function AIChatButton() {
                 <button
                   onClick={handleClear}
                   className="p-1.5 hover:bg-black/10 dark:hover:bg-white/10 rounded-lg text-foreground/70 hover:text-black dark:hover:text-white transition-colors"
-                  title="Hapus riwayat obrolan"
+                  title="Clear chat history"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
                 </button>
@@ -283,7 +282,7 @@ export default function AIChatButton() {
                   className="pt-2"
                 >
                   <p className="text-[10px] text-left text-foreground/50 uppercase tracking-widest mb-2 px-1">
-                    Coba Tanyakan:
+                    Try Asking:
                   </p>
                   <div className="grid grid-cols-2 gap-2">
                     {QUICK_SUGGESTIONS.map((sug, i) => (
@@ -332,12 +331,12 @@ export default function AIChatButton() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 15, scale: 0.98 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute bottom-16 left-3 right-3 bg-white/95 dark:bg-black/95 border border-black/10 dark:border-white/10 rounded-xl shadow-2xl p-1.5 z-50 backdrop-blur-md max-h-[190px] overflow-y-auto custom-scrollbar flex flex-col gap-0.5"
+                  className="absolute bottom-16 left-3 right-3 bg-white/95 dark:bg-black/95 border border-black/10 dark:border-white/10 rounded-xl shadow-2xl p-1.5 z-50 backdrop-blur-md max-h-47.5 overflow-y-auto custom-scrollbar flex flex-col gap-0.5"
                 >
                   <div className="text-[10px] text-left text-foreground/40 font-semibold px-2.5 py-1.5 uppercase tracking-widest border-b border-black/5 dark:border-white/5 mb-1 flex items-center justify-between">
-                    <span>Pintasan Perintah</span>
+                    <span>Command Shortcuts</span>
                     <span className="flex items-center gap-1 normal-case text-[9px] opacity-75">
-                      Gunakan <span className="px-1 bg-black/5 dark:bg-white/10 rounded">↑↓</span> dan <kbd className="px-1 bg-black/5 dark:bg-white/10 rounded font-sans">Enter</kbd>
+                      Use <span className="px-1 bg-black/5 dark:bg-white/10 rounded">↑↓</span> and <kbd className="px-1 bg-black/5 dark:bg-white/10 rounded font-sans">Enter</kbd>
                     </span>
                   </div>
                   {filteredCommands.map((command, idx) => {
@@ -389,7 +388,7 @@ export default function AIChatButton() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Tanya tentang Gilang (ketik '/' untuk shortcut)..."
+                placeholder="Ask about Gilang (type '/' for shortcuts)..."
                 disabled={isLoading}
                 className={cn(
                   "flex-1 bg-white/50 dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl px-3 py-2 text-xs",
